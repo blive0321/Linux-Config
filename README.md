@@ -1,6 +1,6 @@
 # Linux-Config
 
-##  :memo:藉由學習Linux同時，將Linux的重要Configuration Files path和相關參數記下來
+##  :memo:藉由學習Linux，將Linux的重要Configuration Files path和相關參數記下來
 
 :pushpin:`========== [帳號、密碼、群組資訊] ==========`  
 /etc/passwd: 系統上的帳號與一般身份使用者，還有root的相關資訊  
