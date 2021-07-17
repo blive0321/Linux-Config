@@ -1,4 +1,4 @@
-# Linux-Config
+# Linux_Config
 
 ##  :memo:藉由學習Linux，將Linux的重要Configuration Files path和相關參數記下來
 
