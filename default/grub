@@ -1,0 +1,25 @@
+GRUB_TIMEOUT=5
+#設定boot menu倒數秒數
+
+GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"
+#取得選單選項中的描述名稱
+
+GRUB_DEFAULT=saved
+#saved代表使用上次boot menu的選項 , 可更改為0, 1...
+
+GRUB_DISABLE_SUBMENU=true
+#取消子選項
+
+GRUB_TERMINAL="serial console"
+#設定boot menu用console終端機顯示, 取消圖形化介面
+
+GRUB_SERIAL_COMMAND="serial --unit=1 --speed=57600"
+#如果你GRUB想要使用Serial Console就要符合此參數
+
+GRUB_CMDLINE_LINUX="crashkernel=auto resume=UUID=d916e694-2f83-4db0-9544-715d77105c66 console=ttyS0,57600n8 net.ifnames=0 biosdevname=0"
+#不管一般模式或是救援模式, 都會把此參數傳給kernel
+
+GRUB_DISABLE_RECOVERY="true"
+#設定成true, 則menu上不顯示救援模式(recovery mode)。
+
+GRUB_ENABLE_BLSCFG=true
