@@ -1,19 +1,9 @@
-
-#
-# /etc/fstab
-# Created by anaconda on Tue Feb  2 21:50:03 2016
-#
-# Accessible filesystems, by reference, are maintained under '/dev/disk/'.
-# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info.
-#
-# After editing this file, run 'systemctl daemon-reload' to update systemd
-# units generated from this file.
-#
-UUID=89xxxxxx-2xxx-4xxx-8xxx-7fxxxxxxxxx /                       xfs     defaults        0 0
-UUID=8bxxxxxx-2xxx-4xxx-8xxx-2fxxxxxxxxx /boot                   ext4    defaults        1 2
-UUID=4xxx-Axxx          /boot/efi               vfat    umask=0077,shortname=winnt 0 2
-UUID=21xxxxxx-3xxx-4xxx-9xxx-86xxxxxxxxxx /home                   xfs     defaults        0 0
-UUID=d9xxxxxx-2xxx-4xxx-9xxx-71xxxxxxxxxx swap                    swap    defaults        0 0
+# -------------- /etc/fstab file system table介紹 --------------
+UUID=89xxxxxx-2xxx-4xxx-8xxx-7fxxxxxxxxx  /                       xfs     defaults                   0 0
+UUID=8bxxxxxx-2xxx-4xxx-8xxx-2fxxxxxxxxx  /boot                   ext4    defaults                   1 2
+UUID=4xxx-Axxx                            /boot/efi               vfat    umask=0077,shortname=winnt 0 2
+UUID=21xxxxxx-3xxx-4xxx-9xxx-86xxxxxxxxxx /home                   xfs     defaults                   0 0
+UUID=d9xxxxxx-2xxx-4xxx-9xxx-71xxxxxxxxxx swap                    swap    defaults                   0 0
 
 # 系統開機時會主動讀取/etc/fstab這個文件中的內容，根據文件裡面的配置掛載磁碟。這樣我們只需要將磁碟的掛載訊息寫入這個文件中我們就不需要每次開機啟動之後手動進行掛載了
 # 總共6個欄位
