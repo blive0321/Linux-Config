@@ -207,6 +207,22 @@ print total;
 
 awk陣列是awk的靈魂，因為陣列索引可以是數字[0..n]或是字串[first..x]
 
+用awk寫二維陣列的九九乘法表
+awk 'BEGIN{
+for(i=1;i<=9;i++){
+  for(j=1;j<=9;j++){
+    tarr[i,j]=i*j; print i,"*",j,"=",tarr[i,j];
+  }
+}
+}'
+1 * 1 = 1
+1 * 2 = 2
+1 * 3 = 3
+...
+9 * 7 = 63
+9 * 8 = 72
+9 * 9 = 81
+
 
 ### How to Allow Awk to Use Shell Variables – Part 11  
 從11這開始看  
