@@ -1,9 +1,34 @@
 ## -------------------- grep --------------------
 
 ## -------------------- awk --------------------
-awk '/pattern/ action' file.txt
+awk '/pattern/ {action}' file.txt
+awk 'BEGIN{print "start"} /pattern/ {action} END{print "end"}'
+舉例:echo -e "A line 1\nB line 2" | awk 'BEGIN {print "Start..."} {print} END {print "End..."}'
+Start...
+A line 1
+B line 2
+End...
+
+
 pattern是正規表達式
-action是當找到pattern的內容時，要執行的動作
+action是當找到pattern的內容時，要執行的動作，action需用{}包起來
+可以pattern或action擇一顯示，如沒有代入action，預設是{ print }
+
+pattern可以是
+        BEGIN
+	END
+	/regular expression/
+	relational expression關聯式運算子
+	pattern && pattern
+	pattern || pattern
+	pattern1 ? pattern2 : pattern3
+	(pattern)
+	! pattern
+	pattern1, pattern2
+
+BEGIN和END是兩個特別的pattern，使用時，不可省略action
+?:運算子就跟C語言一樣，當第1個pattern為true時，則執行第2個pattern，為false則執行第3個pattern
+pattern1, pattern2代表範圍1到範圍2
 
 IFS
 在awk裡，IFS的default值是space和tab
@@ -139,6 +164,48 @@ bin==>x
 
 RS       : input record separator  
 ORS      : output record separator  
+
+用awk作為if判斷式用法
+awk 'BEGIN{
+test=80;
+
+if(test>90){
+    print "Very good";
+    }
+    else if(test>60){
+        print "good";
+    }
+    else{
+        print "No pass";
+    }
+}'
+good
+
+
+用awk作為while用法
+awk 'BEGIN{
+test=100;
+total=0;
+while(i<=test){
+  total+=i;
+  i++;
+}
+print total;
+}'
+5050
+
+
+用awk作為for用法
+awk 'BEGIN{
+total=0;
+for(i=0;i<=100;i++){
+  total+=i;
+}
+print total;
+}'
+5050
+
+awk陣列是awk的靈魂，因為陣列索引可以是數字[0..n]或是字串[first..x]
 
 
 ### How to Allow Awk to Use Shell Variables – Part 11  
