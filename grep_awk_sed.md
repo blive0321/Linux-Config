@@ -1,4 +1,7 @@
 ## -------------------- grep --------------------
+當.txt裡面有很多一樣的值，只想要找到第1個，可用-m 1
+cat note.txt | grep "centos" -m 1
+
 
 ## -------------------- awk --------------------
 awk '/pattern/ {action}' file.txt
@@ -146,6 +149,9 @@ FILENAME : 現在input的檔案名稱(注意不要更改此變數)
 NR       : 顯示檔案的行數  
 `awk 'END { print "Number of lines in file is : ", NR }' domains.txt`  
 Number of lines in file is :  14  
+
+顯示16行~43行的資料
+awk 'NR>=16&&NR<=43' ./dmidecode_t4.log
 
 NF       : number of fields in current input line (do not change variable name)  
 FS       : awk會將FS指定的欄位運算子劃分，預設的FS是space 和 tab，除了FS外也可以使用-F  
