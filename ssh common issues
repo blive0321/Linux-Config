@@ -14,3 +14,13 @@ common ssh connection issues
 可能是以下問的問題造成：
 1. The host reached the instance but there was no service listening on the SSH port.
 2. A firewall blocked and was set to reject the package instead of dropping it.
+
+
+「 Destination host unreachable 」
+這個訊息是來自router，代表destination主機沒有被router找到
+說明一下"destination host unreachable"和"time out"的區別，如果所經過的路由器的路由表中具有到達目標的路由，而目標因為其它原因不可到達，這時候會出現"time out"，如果路由表中連到達目標的路由都沒有，那就會出現"destination host unreachable"。
+
+
+參考
+[1] Ping指令與Destination host unreachable 和 Request time out"之區別
+https://blog.xuite.net/metafun/life/85495210
