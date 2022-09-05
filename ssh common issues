@@ -1,0 +1,16 @@
+common ssh connection issues
+
+「 Request timed out 」
+代表the server didn't respond to the client and the client program gave up (timed out).
+可能是以下的問題造成：
+1. The security group or network ACL doesn't allow access.
+2. There is a firewall on the instance's operating system.
+3. There is a firewall between the client and the server.
+4. The host doesn't exist.
+
+
+「 Connection refused 」
+代表封包已經抵達server端，但最後被server端擋掉
+可能是以下問的問題造成：
+1. The host reached the instance but there was no service listening on the SSH port.
+2. A firewall blocked and was set to reject the package instead of dropping it.
