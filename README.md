@@ -29,3 +29,12 @@
 :pushpin:`========== [System] ==========`   
 /etc/.bashrc #bash的環境設定檔  
 /etc/crontab #設定例行性工作排程  
+
+:pushpin:`========== [MySQL] ==========` 
+/etc/my.cnf
+
+:pushpin:`========== [NFS = Network File System] ==========` 
+/etc/exports
+
+:pushpin:`========== [OpenSSL] ==========` 
+/etc/pki/tls/openssl.cnf
